@@ -21,28 +21,32 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
         <aspectj.version>1.9.4</aspectj.version>
+        <selenium.version>4.17.0</selenium.version>
+        <lombok.version>1.18.22</lombok.version>
+        <jackson.version>2.10.1</jackson.version>
+        <java-faker.version>1.0.2</java-faker.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.17.0</version>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.10.1</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${java-faker.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

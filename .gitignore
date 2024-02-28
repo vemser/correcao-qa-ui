@@ -16,6 +16,7 @@ build/
 *.log
 bin/
 .settings/
+*.properties
 
 ### Eclipse ###
 .apt_generated
