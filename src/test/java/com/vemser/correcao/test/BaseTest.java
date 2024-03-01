@@ -11,9 +11,9 @@ public class BaseTest extends SeleniumService {
         initBrowser();
     }
 
-//    @After
-//    public  void fecharNavegador(){
-//        tearDown();
-//    }
+    @After
+    public  void fecharNavegador(){
+        tearDown();
+    }
 
 }

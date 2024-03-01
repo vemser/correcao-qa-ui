@@ -60,4 +60,11 @@ public class BasePage extends Elementos {
         WebElement elemento = elemento(by);
         elemento.clear();
     }
+
+    protected static void selecionarOpcaoPorvalor(By by, String valor) {
+        esperarElemento(by);
+        WebElement elemento = elemento(by);
+        Select select = new Select(elemento);
+        select.selectByValue(valor);
+    }
 }
