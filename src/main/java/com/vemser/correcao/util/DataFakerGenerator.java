@@ -15,4 +15,7 @@ public class DataFakerGenerator {
     public String titulo() {
         return faker.lorem().sentence();
     }
+
+    public String email() { return faker.internet().emailAddress();}
+    public String senha() { return faker.internet().password();}
 }
