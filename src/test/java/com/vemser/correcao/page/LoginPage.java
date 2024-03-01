@@ -1,6 +1,6 @@
 package com.vemser.correcao.page;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
         preencherInput(campoSenha, senha);
         clicar(btnLogin);
         String msgBemVindo = lerTexto(txtSpan);
-        Assert.assertEquals("Bem-vindo!", msgBemVindo);
+        Assertions.assertEquals("Bem-vindo!", msgBemVindo);
     }
 
 
