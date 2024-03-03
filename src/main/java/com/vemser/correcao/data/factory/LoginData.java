@@ -14,6 +14,13 @@ public class LoginData {
         loginDto.setSenha(Manipulation.getProps().getProperty("SenhaAluno"));
         return loginDto;
     }
+
+    public LoginDto loginInstrutorComDadosValidos() {
+        LoginDto loginDto = new LoginDto();
+        loginDto.setEmail(Manipulation.getProps().getProperty("EmailInstrutor"));
+        loginDto.setSenha(Manipulation.getProps().getProperty("SenhaInstrutor"));
+        return loginDto;
+    }
     public LoginDto loginComDadosInvalidos() {
         LoginDto loginDto = new LoginDto();
         loginDto.setEmail(faker.email());
