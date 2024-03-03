@@ -9,12 +9,8 @@ import static com.vemser.correcao.validate.LoginValidate.*;
 import io.qameta.allure.*;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
-import org.junit.Test;
-
 
 @Epic("Login")
 @DisplayName("Login")
@@ -41,9 +37,8 @@ public class LoginTest extends BaseTest{
 
         String txtSuasAtividades = loginPage.lerTxtSuasAtividades();
         String txtBemVindo = loginPage.lerTxtSpan();
-        Assertions.assertEquals("Bem-vindo!", txtBemVindo);
-        Assert.assertEquals(txtBemVindo, TXT_BEM_VINDO_ALUNO_TESTE);
-        Assert.assertEquals(txtSuasAtividades, TELA_ATIVIDADES_ALUNO);
+        Assertions.assertEquals(txtBemVindo, TXT_BEM_VINDO_ALUNO_TESTE);
+        Assertions.assertEquals(txtSuasAtividades, TELA_ATIVIDADES_ALUNO);
     }
 
     @Test
@@ -55,7 +50,7 @@ public class LoginTest extends BaseTest{
         LoginDto loginDto = loginData.loginInstrutorComDadosValidos();
 
         String txtLogin = loginPage.lerTxtLogin();
-        Assert.assertEquals(txtLogin, TELA_LOGIN);
+        Assertions.assertEquals(txtLogin, TELA_LOGIN);
 
         loginPage.preencherCampoEmail(loginDto.getEmail());
         loginPage.preencherCampoSenha(loginDto.getSenha());
@@ -63,8 +58,8 @@ public class LoginTest extends BaseTest{
 
         String txtSuasAtividades = loginPage.lerTxtAtividades();
         String txtBemVindo = loginPage.lerTxtSpan();
-        Assert.assertEquals(txtBemVindo, TXT_BEM_VINDO_INSTRUTOR_TESTE);
-        Assert.assertEquals(txtSuasAtividades, TELA_INSTRUTOR_ATIVIDADES);
+        Assertions.assertEquals(txtBemVindo, TXT_BEM_VINDO_INSTRUTOR_TESTE);
+        Assertions.assertEquals(txtSuasAtividades, TELA_INSTRUTOR_ATIVIDADES);
     }
 
     @Test
@@ -77,9 +72,7 @@ public class LoginTest extends BaseTest{
 
         String txtLogin = loginPage.lerTxtLogin();
 
-        Assertions.assertEquals("Login", txtLogin);
-
-        Assert.assertEquals(txtLogin, TELA_LOGIN);
+        Assertions.assertEquals(txtLogin, TELA_LOGIN);
 
 
         loginPage.preencherCampoEmail(loginDto.getEmail());
@@ -88,9 +81,7 @@ public class LoginTest extends BaseTest{
 
         String txtErro = loginPage.lerTxtSpan();
 
-        Assertions.assertEquals("Erro: credenciais inválidas", txtErro);
-
-        Assert.assertEquals(txtErro, ERRO_EFETUAR_LOGIN);
+        Assertions.assertEquals(txtErro, ERRO_EFETUAR_LOGIN);
 
     }
 
@@ -105,9 +96,7 @@ public class LoginTest extends BaseTest{
         loginPage.clicarBtnLogin();
         String txtErroEmail = loginPage.lerTxtErroSenhaOuEmail();
 
-        Assertions.assertEquals("Email é obrigatório", txtErroEmail);
-
-        Assert.assertEquals(txtErroEmail, ERRO_EMAIL_OBRIGATORIO);
+        Assertions.assertEquals(txtErroEmail, ERRO_EMAIL_OBRIGATORIO);
 
     }
 
@@ -122,9 +111,7 @@ public class LoginTest extends BaseTest{
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
 
-        Assertions.assertEquals("Senha é obrigatória", txtErroSenha);
-
-        Assert.assertEquals(txtErroSenha, ERRO_SENHA_OBRIGATORIA);
+        Assertions.assertEquals(txtErroSenha, ERRO_SENHA_OBRIGATORIA);
 
     }
 
@@ -140,9 +127,7 @@ public class LoginTest extends BaseTest{
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
 
-        Assertions.assertEquals("Senha precisa ter no mínimo 8 caracteres", txtErroSenha);
-
-        Assert.assertEquals(txtErroSenha, ERRO_SENHA_8_CARACTERES);
+        Assertions.assertEquals(txtErroSenha, ERRO_SENHA_8_CARACTERES);
     }
 
     @Test
@@ -156,8 +141,7 @@ public class LoginTest extends BaseTest{
         loginPage.preencherCampoSenha(loginDto.getSenha());
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
-        Assert.assertEquals(txtErroSenha, ERRO_EMAIL_21_CARACTERES);
-
+        Assertions.assertEquals(txtErroSenha, ERRO_EMAIL_21_CARACTERES);
     }
 
 }
