@@ -1,17 +1,17 @@
 package com.vemser.correcao.test;
 
 import com.vemser.correcao.service.SeleniumService;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BaseTest extends SeleniumService {
 
-    @Before
+    @BeforeEach
     public  void abrirNavegador(){
         initBrowser();
     }
 
-    @After
+    @AfterEach
     public  void fecharNavegador(){
         tearDown();
     }

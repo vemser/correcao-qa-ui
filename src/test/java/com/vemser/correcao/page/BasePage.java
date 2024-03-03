@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class BasePage extends Elementos {
 
@@ -58,5 +59,12 @@ public class BasePage extends Elementos {
 
         WebElement elemento = elemento(by);
         elemento.clear();
+    }
+
+    protected static void selecionarOpcaoPorvalor(By by, String valor) {
+        esperarElemento(by);
+        WebElement elemento = elemento(by);
+        Select select = new Select(elemento);
+        select.selectByValue(valor);
     }
 }

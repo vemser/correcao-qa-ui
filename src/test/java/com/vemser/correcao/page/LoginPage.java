@@ -1,6 +1,6 @@
 package com.vemser.correcao.page;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import static com.vemser.correcao.validate.LoginValidate.TXT_BEM_VINDO;
 
@@ -47,8 +47,9 @@ public class LoginPage extends BasePage {
     public void fazerLoginValido(String email, String senha) {
         preencherInput(campoEmail, email);
         preencherInput(campoSenha, senha);
+        clicar(btnLogin);
         String msgBemVindo = lerTexto(txtSpan);
-        Assert.assertTrue(msgBemVindo.contains(TXT_BEM_VINDO));
+        Assertions.assertEquals("Bem-vindo!", msgBemVindo);
     }
 
 

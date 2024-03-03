@@ -7,9 +7,14 @@ import com.vemser.correcao.page.LoginPage;
 import static com.vemser.correcao.validate.AtividadesAlunoValidate.TELA_ATIVIDADES_ALUNO;
 import static com.vemser.correcao.validate.LoginValidate.*;
 import io.qameta.allure.*;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
+
 
 @Epic("Login")
 @DisplayName("Login")
@@ -28,7 +33,7 @@ public class LoginTest extends BaseTest{
         LoginDto loginDto = loginData.loginEstagiarioComDadosValidos();
 
         String txtLogin = loginPage.lerTxtLogin();
-        Assert.assertEquals(txtLogin, TELA_LOGIN);
+        Assertions.assertEquals("Login", txtLogin);
 
         loginPage.preencherCampoEmail(loginDto.getEmail());
         loginPage.preencherCampoSenha(loginDto.getSenha());
@@ -36,6 +41,7 @@ public class LoginTest extends BaseTest{
 
         String txtSuasAtividades = loginPage.lerTxtSuasAtividades();
         String txtBemVindo = loginPage.lerTxtSpan();
+        Assertions.assertEquals("Bem-vindo!", txtBemVindo);
         Assert.assertEquals(txtBemVindo, TXT_BEM_VINDO_ALUNO_TESTE);
         Assert.assertEquals(txtSuasAtividades, TELA_ATIVIDADES_ALUNO);
     }
@@ -70,14 +76,22 @@ public class LoginTest extends BaseTest{
         LoginDto loginDto = loginData.loginComDadosInvalidos();
 
         String txtLogin = loginPage.lerTxtLogin();
+
+        Assertions.assertEquals("Login", txtLogin);
+
         Assert.assertEquals(txtLogin, TELA_LOGIN);
+
 
         loginPage.preencherCampoEmail(loginDto.getEmail());
         loginPage.preencherCampoSenha(loginDto.getSenha());
         loginPage.clicarBtnLogin();
 
         String txtErro = loginPage.lerTxtSpan();
+
+        Assertions.assertEquals("Erro: credenciais inválidas", txtErro);
+
         Assert.assertEquals(txtErro, ERRO_EFETUAR_LOGIN);
+
     }
 
     @Test
@@ -90,7 +104,11 @@ public class LoginTest extends BaseTest{
         loginPage.preencherCampoSenha(loginDto.getSenha());
         loginPage.clicarBtnLogin();
         String txtErroEmail = loginPage.lerTxtErroSenhaOuEmail();
+
+        Assertions.assertEquals("Email é obrigatório", txtErroEmail);
+
         Assert.assertEquals(txtErroEmail, ERRO_EMAIL_OBRIGATORIO);
+
     }
 
     @Test
@@ -103,7 +121,11 @@ public class LoginTest extends BaseTest{
         loginPage.preencherCampoEmail(loginDto.getEmail());
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
+
+        Assertions.assertEquals("Senha é obrigatória", txtErroSenha);
+
         Assert.assertEquals(txtErroSenha, ERRO_SENHA_OBRIGATORIA);
+
     }
 
     @Test
@@ -117,6 +139,9 @@ public class LoginTest extends BaseTest{
         loginPage.preencherCampoSenha("123456");
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
+
+        Assertions.assertEquals("Senha precisa ter no mínimo 8 caracteres", txtErroSenha);
+
         Assert.assertEquals(txtErroSenha, ERRO_SENHA_8_CARACTERES);
     }
 
@@ -132,6 +157,7 @@ public class LoginTest extends BaseTest{
         loginPage.clicarBtnLogin();
         String txtErroSenha = loginPage.lerTxtErroSenhaOuEmail();
         Assert.assertEquals(txtErroSenha, ERRO_EMAIL_21_CARACTERES);
+
     }
 
 }
