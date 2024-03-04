@@ -1,7 +1,5 @@
 package com.vemser.correcao.rest.dto.questao;
 
-
-import com.vemser.correcao.dto.questao.QuestaoDto;
 import com.vemser.correcao.rest.dto.paginacao.PageableDto;
 import com.vemser.correcao.rest.dto.paginacao.SortDto;
 import lombok.AllArgsConstructor;

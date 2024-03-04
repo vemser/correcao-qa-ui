@@ -1,7 +1,7 @@
 package com.vemser.correcao.rest.client;
 
 
-import com.vemser.correcao.rest.dto.CriarAtividadeDto;
+import com.vemser.correcao.rest.dto.atividade.CriarAtividadeDto;
 import com.vemser.correcao.rest.specs.AtividadesSpecs;
 import com.vemser.correcao.rest.specs.LoginSpecs;
 import io.restassured.response.Response;

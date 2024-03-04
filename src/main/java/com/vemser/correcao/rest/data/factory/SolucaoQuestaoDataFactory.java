@@ -1,10 +1,11 @@
 package com.vemser.correcao.rest.data.factory;
 
-import com.vemser.compilador.data.factory.CompiladorDataFactory;
-import com.vemser.compilador.enums.Linguagem;
-import com.vemser.correcao.dto.questao.QuestaoDto;
-import com.vemser.correcao.dto.solucao.SolucaoQuestaoDto;
-import net.datafaker.Faker;
+
+
+import com.github.javafaker.Faker;
+import com.vemser.correcao.rest.dto.questao.QuestaoDto;
+import com.vemser.correcao.rest.dto.solucao.SolucaoQuestaoDto;
+import com.vemser.correcao.rest.enums.Linguagem;
 
 import java.util.ArrayList;
 import java.util.Locale;

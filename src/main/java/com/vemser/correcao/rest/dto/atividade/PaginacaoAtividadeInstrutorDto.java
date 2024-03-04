@@ -1,7 +1,7 @@
 package com.vemser.correcao.rest.dto.atividade;
 
-import com.vemser.correcao.dto.paginacao.PageableDto;
-import com.vemser.correcao.dto.paginacao.SortDto;
+import com.vemser.correcao.rest.dto.paginacao.PageableDto;
+import com.vemser.correcao.rest.dto.paginacao.SortDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

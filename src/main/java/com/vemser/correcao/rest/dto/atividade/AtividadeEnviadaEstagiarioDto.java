@@ -1,6 +1,6 @@
 package com.vemser.correcao.rest.dto.atividade;
 
-import com.vemser.correcao.dto.solucao.SolucaoQuestaoResponseDto;
+import com.vemser.correcao.rest.dto.solucao.SolucaoQuestaoResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
