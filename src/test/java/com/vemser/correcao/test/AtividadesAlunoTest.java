@@ -5,6 +5,7 @@ import com.vemser.correcao.data.factory.LoginData;
 import com.vemser.correcao.page.AtividadesAlunoPage;
 import com.vemser.correcao.page.LoginPage;
 import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.vemser.correcao.validate.AtividadesAlunoValidate.*;
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Epic("Visualizar atividades - visão aluno")
+@DisplayName("Tela de atividades - Aluno")
 @Owner("Brayan Benet")
 public class AtividadesAlunoTest extends BaseTest{
 

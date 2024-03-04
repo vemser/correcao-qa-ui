@@ -34,7 +34,8 @@ public class LoginPage extends BasePage {
         return lerTexto(txtSuasAtividades);
     }
 
-    public String lerTxtAtividades() {return lerTexto(txtAtividades);}
+    public String lerTxtAtividades() {
+        return lerTexto(txtAtividades);}
 
     public String lerTxtSpan() {
         return lerTexto(txtSpan);
