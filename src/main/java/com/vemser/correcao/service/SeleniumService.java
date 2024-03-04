@@ -20,7 +20,9 @@ public class SeleniumService {
 
         switch (Manipulation.getProps().getProperty("BrowserType")) {
             case "chrome":
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless");
+                driver = new ChromeDriver(options);
                 wait = new WebDriverWait(driver, Duration.ofSeconds(5));
                 driver.get(Manipulation.getProps().getProperty("AppURL"));
                 driver.manage().window().maximize();
