@@ -17,6 +17,7 @@
         <lombok.version>1.18.22</lombok.version>
         <jackson.version>2.10.1</jackson.version>
         <java-faker.version>1.0.2</java-faker.version>
+        <rest.assured.version>5.4.0</rest.assured.version>
         <slf4j-api.version>2.0.3</slf4j-api.version>
         <slf4j-log4j12.version>2.0.3</slf4j-log4j12.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,6 +70,24 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+
+        <!-- Dependência REST Assured-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest.assured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${rest.assured.version}</version>
         </dependency>
 
         <!-- Dependência Outras -->
