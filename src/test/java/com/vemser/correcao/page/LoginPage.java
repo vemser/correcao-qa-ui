@@ -14,6 +14,7 @@ public class LoginPage extends BasePage {
     private static final By txtAtividades = By.cssSelector("#root > main > div > section > div.tituloEBotao > h1");
     private static final By txtSpan = By.cssSelector("#notistack-snackbar");
     private static final By txtErroSenhaOuEmail = By.cssSelector("#root > div > section > form > div > p");
+    private static final By userNameField = By.cssSelector("#root > header > nav > div > div.HeaderInstrutor_user__7acFT");
 
     public String lerTxtLogin() {
         return lerTexto(txtLogin);
@@ -43,6 +44,10 @@ public class LoginPage extends BasePage {
 
     public String lerTxtErroSenhaOuEmail() {
         return lerTexto(txtErroSenhaOuEmail);
+    }
+
+    public String leruserNameField() {
+        return lerTexto(userNameField);
     }
 
     public void fazerLoginValido(String email, String senha) {

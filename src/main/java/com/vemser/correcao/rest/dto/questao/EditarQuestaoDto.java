@@ -1,8 +1,7 @@
 package com.vemser.correcao.rest.dto.questao;
 
 
-import com.vemser.correcao.dto.teste.EditarTesteDto;
-
+import com.vemser.correcao.rest.dto.teste.EditarTesteDto;
 import com.vemser.correcao.rest.enums.Dificuldade;
 import com.vemser.correcao.rest.enums.Linguagem;
 import lombok.AllArgsConstructor;

@@ -11,7 +11,7 @@ public class Manipulation {
     public static Properties getProps() {
         Properties props = new Properties();
         try {
-            FileInputStream file = new FileInputStream("src/main/resources/configSetting.properties");
+            FileInputStream file = new FileInputStream("src/main/resources/configSettingRest.properties");
             props.load(file);
         } catch (IOException e) {
             e.printStackTrace();
