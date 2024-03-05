@@ -37,6 +37,13 @@ public class AtividadesAlunoPage extends BasePage{
     private static final By campoStatusDois =
             By.cssSelector("#root > main > div > section.AtividadesAtribuidas_atividadesContainer__u1tYB > button:nth-child(1) > div.AtividadesAtribuidas_rightSection__N5\\+fK > p");
 
+    private static final By primeiraQuestaoTitulo =
+            By.cssSelector("data-testid='titulo-atividade']");
+
+    public String validarTituloAtividade() {
+        return lerTexto(primeiraQuestaoTitulo);
+    }
+
     public String validarTelaTodasAtividades() {
         return lerTexto(textSuasAtividades);
     }

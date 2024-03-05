@@ -14,4 +14,8 @@ public class ResponderQuestaoPage extends BasePage {
     private static final By btnEnviarQuestao = By.cssSelector("[data-testid='botao-abrir-modal-confirmacao']");
     private static final By btnCancelarEnvio = By.cssSelector("[data-testid='botao-cancelar-envio']");
     private static final By btnEnviarQuestaoModal = By.cssSelector("[data-testid='botao-enviar-questao']");
+
+    public String validarTituloQuestao() {
+        return lerTexto(txtTitulo);
+    }
 }
