@@ -68,6 +68,19 @@ SenhaInstrutor={SENHA_INSTRUTOR}
 ```
 
 ```properties
+
+# Crie um arquivo configSettingsRest.properties na pasta ./src/main/resources
+
+CompiladorURL={COMPILADOR_URL}
+ApiURL={API_URL}
+AlunoUsername={ALUNO_USERNAME}
+AlunoPassword={ALUNO_PASSWORD}
+InstrutorUsername={INSTRUTOR_USERNAME}
+InstrutorPassword={INSTRUTOR_PASSWORD}
+
+```
+
+```properties
 # Crie um arquivo allure.properties na pasta ./src/test/resources
 
 allure.results.directory=target/allure-results
