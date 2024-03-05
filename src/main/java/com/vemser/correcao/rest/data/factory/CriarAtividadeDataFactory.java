@@ -48,6 +48,19 @@ public class CriarAtividadeDataFactory {
         return criarAtividadeValida;
     }
 
+    public static CriarAtividadeDto atividadeComDadosValidosTituloCerto() {
+        CriarAtividadeDto criarAtividadeValida = new CriarAtividadeDto();
+
+        criarAtividadeValida.setDescricao(faker.lorem().paragraph());
+        criarAtividadeValida.setEdicaoVemSer("13");
+        criarAtividadeValida.setPrazoEntrega("2025-03-01T13:01:41.065Z");
+        criarAtividadeValida.setQuestoesInt(listaIdDuasQuestoesValidasParaAtividade());
+        criarAtividadeValida.setTitulo("Teste 100");
+        criarAtividadeValida.setTrilha(Trilha.BACK);
+
+        return criarAtividadeValida;
+    }
+
     public static CriarAtividadeDto atividadeComQuestoesInativas() {
         CriarAtividadeDto criarAtividadeValida = new CriarAtividadeDto();
         ArrayList<Integer> questoes = new ArrayList<>();
