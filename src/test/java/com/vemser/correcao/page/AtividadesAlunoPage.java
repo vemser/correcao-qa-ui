@@ -25,6 +25,13 @@ public class AtividadesAlunoPage extends BasePage{
     private static final By campoDropDownFiltro =
             By.cssSelector("[id='select-status']");
 
+    private static final By primeiraQuestaoTitulo =
+            By.cssSelector("data-testid='titulo-atividade']");
+
+    public String validarTituloAtividade() {
+        return lerTexto(primeiraQuestaoTitulo);
+    }
+
     public String validarTelaTodasAtividades() {
         return lerTexto(textSuasAtividades);
     }

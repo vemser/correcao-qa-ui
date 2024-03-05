@@ -23,7 +23,7 @@ public class AtividadesAlunoTest extends BaseTest{
 
     @Test
     @Feature("Tela de Listagem de Atividades (Aluno)")
-    @Story("Acessar atividades com sucesso")
+    @Story("[CTU08] Acessar atividades com sucesso")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Teste que verifica se o aluno consegue visualizar suas atividades")
     public void testAcessarAtividadeComSucesso() {
@@ -63,7 +63,7 @@ public class AtividadesAlunoTest extends BaseTest{
 
     @Test
     @Feature("Tela de Listagem de Atividades (Aluno)")
-    @Story("Acessar atividades com o filtro de pendentes")
+    @Story("[CTU09] Acessar atividades com o filtro de pendentes")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Teste que verifica se a funcionalidade de filtragem de atividades está funcionando")
     public void testValidarFiltroAtividadesPendentes() {
@@ -85,7 +85,7 @@ public class AtividadesAlunoTest extends BaseTest{
 
     @Test
     @Feature("Tela de Listagem de Atividades (Aluno)")
-    @Story("Acessar atividades com o filtro de entregues")
+    @Story("[CTU10] Acessar atividades com o filtro de entregues")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Teste que verifica se a funcionalidade de filtragem de atividades está funcionando")
     public void testValidarFiltroAtividadesEntregues() {

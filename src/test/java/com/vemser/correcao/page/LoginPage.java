@@ -58,6 +58,4 @@ public class LoginPage extends BasePage {
         Assertions.assertTrue(msgBemVindo.contains("Bem-vindo,"));
     }
 
-
-
 }
