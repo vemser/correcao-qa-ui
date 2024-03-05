@@ -55,7 +55,7 @@ public class LoginPage extends BasePage {
         preencherInput(campoSenha, senha);
         clicar(btnLogin);
         String msgBemVindo = lerTexto(txtSpan);
-        Assertions.assertTrue(msgBemVindo.contains("Bem-vindo,"));
+        Assertions.assertTrue( msgBemVindo.contains("Bem-vindo, "));
     }
 
 }
