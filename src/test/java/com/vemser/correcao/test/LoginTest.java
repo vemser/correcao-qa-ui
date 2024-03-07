@@ -56,12 +56,10 @@ public class LoginTest extends BaseTest{
         loginPage.preencherCampoEmail(email);
         loginPage.preencherCampoSenha(loginDto.getSenha());
         loginPage.clicarBtnLogin();
-
         String txtBemVindo = loginPage.lerTxtSpan();
         Assertions.assertEquals(txtBemVindo, TXT_BEM_VINDO_INSTRUTOR_TESTE);
 
         email = email.substring(0, email.indexOf("@"));
-        email = email.replace(".", " ");
         String userName = loginPage.leruserNameField().toLowerCase();
         System.out.println(email);
         Assertions.assertTrue(userName.contains(email));

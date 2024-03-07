@@ -44,12 +44,18 @@ public class AtividadesIDAlunoTest extends BaseTest{
 
         String telaAtividades = atividadesAlunoPage.validarTelaTodasAtividades();
         assertEquals(telaAtividades, TELA_ATIVIDADES_ALUNO);
+
         String statusAtividades = atividadesAlunoPage.validarStatusDaAtividade();
 
         String dropDown = atividadesAlunoPage.validarDropDown();
         assertEquals(dropDown, TEXT_DROP_DOWN_FILTRO);
         atividadesAlunoPage.clicarCampoDropDown();
         atividadesAlunoPage.clicarCampoPendente();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         atividadesAlunoPage.clicarVerAtividade();
 
         AtividadeIDAlunoPage atividadesIDAlunoPage = new AtividadeIDAlunoPage();
@@ -63,9 +69,9 @@ public class AtividadesIDAlunoTest extends BaseTest{
 
     @Test
     @Feature("Tela de Atividade (Aluno)")
-    @Story("[CTU12] Enviar atividade com sucesso resolvendo questões")
+    @Story("[CTU12] Acessar tela de questão com sucesso")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Teste que verifica envio de atividade sem resolver questões com sucesso")
+    @Description("Teste que verifica o acesso a tela de questão com sucesso")
     public void testAcessarPaginaDeQuestao() {
         LoginDto loginDto = loginData.loginEstagiarioComDadosValidos();
         loginPage.fazerLoginValido(loginDto.getEmail(), loginDto.getSenha());
@@ -78,6 +84,11 @@ public class AtividadesIDAlunoTest extends BaseTest{
         assertEquals(dropDown, TEXT_DROP_DOWN_FILTRO);
         atividadesAlunoPage.clicarCampoDropDown();
         atividadesAlunoPage.clicarCampoPendente();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         atividadesAlunoPage.clicarVerAtividade();
 
         AtividadeIDAlunoPage atividadesIDAlunoPage = new AtividadeIDAlunoPage();

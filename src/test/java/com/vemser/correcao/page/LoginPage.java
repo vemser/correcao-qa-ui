@@ -39,7 +39,7 @@ public class LoginPage extends BasePage {
         return lerTexto(txtAtividades);}
 
     public String lerTxtSpan() {
-        return lerTexto(txtSpan);
+        return lerTextoPopUp(txtSpan);
     }
 
     public String lerTxtErroSenhaOuEmail() {
@@ -54,8 +54,7 @@ public class LoginPage extends BasePage {
         preencherInput(campoEmail, email);
         preencherInput(campoSenha, senha);
         clicar(btnLogin);
-        String msgBemVindo = lerTexto(txtSpan);
+        String msgBemVindo = lerTextoPopUp(txtSpan);
         Assertions.assertTrue( msgBemVindo.contains("Bem-vindo, "));
     }
-
 }
