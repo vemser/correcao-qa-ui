@@ -17,7 +17,7 @@ public class SeleniumService {
 
     public void initBrowser() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
 
         switch (Manipulation.getProps().getProperty("BrowserType")) {
             case "firefox":

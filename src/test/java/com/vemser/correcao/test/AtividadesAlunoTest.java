@@ -7,6 +7,7 @@ import com.vemser.correcao.page.LoginPage;
 import com.vemser.correcao.rest.client.AtividadesInstrutorClient;
 import com.vemser.correcao.rest.data.factory.CriarAtividadeDataFactory;
 import com.vemser.correcao.rest.dto.atividade.CriarAtividadeDto;
+import com.vemser.correcao.rest.dto.atividade.CriarAtividadeResponseDto;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,10 @@ public class AtividadesAlunoTest extends BaseTest{
     public void testAcessarAtividadeComSucesso() {
 
         CriarAtividadeDto atividade = CriarAtividadeDataFactory.atividadeComDadosValidos();
-        AtividadesInstrutorClient.criarAtividade(atividade);
+        CriarAtividadeResponseDto resposta = AtividadesInstrutorClient.criarAtividade(atividade)
+                .then()
+                    .extract()
+                    .as(CriarAtividadeResponseDto.class);
 
         LoginDto loginDto = loginData.loginEstagiarioComDadosValidos();
         loginPage.fazerLoginValido(loginDto.getEmail(), loginDto.getSenha());
@@ -43,6 +47,8 @@ public class AtividadesAlunoTest extends BaseTest{
         atividadesAlunoPage.clicarVerAtividade();
         String telaAtividade = atividadesAlunoPage.validarTelaAtividade();
         assertEquals(telaAtividade, TELA_ATIVIDADE_ALUNO);
+
+        AtividadesInstrutorClient.excluirAtividade(resposta.getAtividadeId());
     }
 
     @Test
@@ -63,10 +69,10 @@ public class AtividadesAlunoTest extends BaseTest{
         assertNotNull(statusAtividades);
         String dropDown = atividadesAlunoPage.validarDropDown();
         assertEquals(dropDown, TEXT_DROP_DOWN_FILTRO);
-        atividadesAlunoPage.clicarCampoDropDown();
-        atividadesAlunoPage.clicarCampoPendente();
+//        atividadesAlunoPage.clicarCampoDropDown();
+//        atividadesAlunoPage.clicarCampoPendente();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -101,8 +107,8 @@ public class AtividadesAlunoTest extends BaseTest{
         String telaAtividade = atividadesAlunoPage.validarTelaAtividade();
         assertEquals(telaAtividade, TELA_ATIVIDADE_ALUNO);
         atividadesAlunoPage.clicarCampoEntregarAtividade();
-//        atividadesAlunoPage.clicarCampoDropDown();
-//        atividadesAlunoPage.clicarCampoEntregue();
+        atividadesAlunoPage.clicarCampoDropDown();
+        atividadesAlunoPage.clicarCampoEntregue();
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
