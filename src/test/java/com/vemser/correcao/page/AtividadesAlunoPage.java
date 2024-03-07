@@ -40,6 +40,9 @@ public class AtividadesAlunoPage extends BasePage{
     private static final By primeiraQuestaoTitulo =
             By.cssSelector("data-testid='titulo-atividade']");
 
+    private static final By segundaAtividade =
+            By.cssSelector("#root > main > div > section.AtividadesAtribuidas_atividadesContainer__u1tYB > button:nth-child(2)");
+
     public String validarTituloAtividade() {
         return lerTexto(primeiraQuestaoTitulo);
     }
@@ -86,6 +89,10 @@ public class AtividadesAlunoPage extends BasePage{
 
     public void voltarPaginaPrincipal() {
         clicar(btnVoltaPaginaPrincipal);
+    }
+
+    public void clicarSegundaAtividade() {
+        clicar(segundaAtividade);
     }
 
 }
